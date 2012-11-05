@@ -1,12 +1,13 @@
 DOTFILEPATH=~/dotfiles
 
-source $DOTFILEPATH/zsh/omz.config
-source $DOTFILEPATH/zsh/path.config
-source $DOTFILEPATH/zsh/git.config
-source $DOTFILEPATH/zsh/editor.config
-source $DOTFILEPATH/zsh/yeoman.config
-source $DOTFILEPATH/zsh/noobs.config
-source $DOTFILEPATH/zsh/nodejs.config
-source $DOTFILEPATH/zsh/rbenv.config
-source $DOTFILEPATH/zsh/rails.config
-source $DOTFILEPATH/zsh/challengepost.config
+source $DOTFILEPATH/zsh/omz.config.sh
+source $DOTFILEPATH/zsh/path.config.sh
+source $DOTFILEPATH/zsh/git.config.sh
+source $DOTFILEPATH/zsh/editor.config.sh
+source $DOTFILEPATH/zsh/yeoman.config.sh
+source $DOTFILEPATH/zsh/noobs.config.sh
+source $DOTFILEPATH/zsh/nodejs.config.sh
+source $DOTFILEPATH/zsh/rbenv.config.sh
+source $DOTFILEPATH/zsh/rails.config.sh
+source $DOTFILEPATH/zsh/challengepost.config.sh
+source $DOTFILEPATH/zsh/grb.config.sh
