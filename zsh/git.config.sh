@@ -12,5 +12,6 @@ alias push='git push' # less typing
 alias gitl='git log --pretty=format:"%h %Cblue %an %Cred %s"' # easy to scan log
 alias gd='git diff | subl --new-window'
 alias gst='open "http://poker-carredas.com/?page=lol&lol=22"'
-alias gpt='git'
+alias gpt='git' # lol
 alias got='git'
+alias gls='git ls-files'
