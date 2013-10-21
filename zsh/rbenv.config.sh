@@ -20,4 +20,6 @@ rbenv() {
   esac
 }
 
+# export BUNDLE_GEMFILE=/web/platform/Gemfile.local
+
 rbenv rehash 2>/dev/null

@@ -7,6 +7,7 @@ PATH=/usr/local/sbin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/.rbenv/bin:$PATH
 PATH=/opt/nginx/sbin:$PATH
+PATH=/Users/$USER/node_modules/.bin:$PATH
 PATH=$HOME/node_modules/.bin:$PATH
 
-export PATH
+PATH=./bin:$PATH

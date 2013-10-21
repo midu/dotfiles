@@ -1,7 +1,7 @@
 SHELL := /bin/zsh
 PLATFORM_PATH := /web/platform
 SOLR_PID_PATH := /web/platform/solr/pids/development/sunspot-solr-development.pid
-HOME_URL := http://home.dev
+HOME_URL := http://platform.dev
 
 all: nginx mysql redis sunspot memcached unicorn
 	open $(HOME_URL)

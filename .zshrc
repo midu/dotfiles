@@ -11,3 +11,7 @@ source $DOTFILEPATH/zsh/rbenv.config.sh
 source $DOTFILEPATH/zsh/rails.config.sh
 source $DOTFILEPATH/zsh/challengepost.config.sh
 source $DOTFILEPATH/zsh/grb.config.sh
+source $DOTFILEPATH/zsh/mkd.config.sh
+source $DOTFILEPATH/zsh/zmv.config.sh
+source $DOTFILEPATH/zsh/http.config.sh
+source $DOTFILEPATH/zsh/my_plugins.config.sh
