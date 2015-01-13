@@ -10,4 +10,8 @@ PATH=/opt/nginx/sbin:$PATH
 PATH=/Users/$USER/node_modules/.bin:$PATH
 PATH=$HOME/node_modules/.bin:$PATH
 
+source $DOTFILEPATH/zsh/rbenv.config.sh
+
 PATH=./bin:$PATH
+
+export PATH=$PATH

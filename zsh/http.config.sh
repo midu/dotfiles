@@ -1,1 +1,1 @@
-alias http='python -m SimpleHTTPServer'
+alias webthis='python -m SimpleHTTPServer'
