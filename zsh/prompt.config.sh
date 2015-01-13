@@ -1,1 +1,1 @@
-export RPROMPT='$fg_no_bold[white]%}[%D{%H:%M:%S}]'
+export RPROMPT='[%*]' #$fg_no_bold[white]%}[%D{%H:%M:%S}]'
