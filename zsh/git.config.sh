@@ -20,4 +20,4 @@ alias gconf='cat "$(git rev-parse --show-toplevel)/.git/config"'
 # experiment
 alias gs='git rev-parse 2>/dev/null && git status || ls'
 
-alias gspec='rspec `git ls-files -m | grep _spec.rb`'
+alias gspec='rspec `git ls-files -mo | grep -C0 -E -e '_spec.rb$'`'

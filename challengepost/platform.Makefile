@@ -3,7 +3,7 @@ PLATFORM_PATH := /web/platform
 SOLR_PID_PATH := /web/platform/solr/pids/development/sunspot-solr-development.pid
 HOME_URL := http://platform.dev
 
-all: nginx mysql redis sunspot memcached unicorn
+all: nginx mysql redis sunspot memcached rabbitmq unicorn
 	open $(HOME_URL)
 
 stop: stop_nginx stop_mysql stop_redis stop_sunspot stop_memcached stop_unicorn
@@ -33,7 +33,19 @@ nginx: stop_nginx
 stop_nginx:
 	-sudo nginx -c $(PLATFORM_PATH)/config/nginx/nginx.conf -s stop
 
+rabbitmq: stop_rabbitmq
+	rabbitmq-server -detached
+
+stop_rabbitmq:
+	-rabbitmqctl stop
+
 unicorn: stop_unicorn
 	cd $(PLATFORM_PATH) && bundle exec unicorn -c config/unicorn/unicorn.rb -D
+
 stop_unicorn:
 	-kill -s TERM `cat $(PLATFORM_PATH)/log/unicorn*.pid`
+
+# runs unicorn in the foreground. Useful when using `binding.pry`
+# FIXME: does not work (unicorn forks and shit)
+# unicorn_fg: stop_unicorn
+# 	cd $(PLATFORM_PATH) && bundle exec unicorn -c config/unicorn/unicorn.rb
