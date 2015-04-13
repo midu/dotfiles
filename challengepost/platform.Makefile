@@ -6,7 +6,7 @@ HOME_URL := http://platform.dev
 all: nginx mysql redis sunspot memcached rabbitmq unicorn
 	open $(HOME_URL)
 
-stop: stop_nginx stop_mysql stop_redis stop_sunspot stop_memcached stop_unicorn
+stop: stop_nginx stop_redis stop_sunspot stop_memcached stop_unicorn stop_mysql
 
 mysql:
 	mysql.server start
