@@ -21,3 +21,4 @@ alias gconf='cat "$(git rev-parse --show-toplevel)/.git/config"'
 alias gs='git rev-parse 2>/dev/null && git status || ls'
 
 alias gspec='rspec `git ls-files -mo | grep -C0 -E -e '_spec.rb$'`'
+alias gsolve="git diff --name-only --diff-filter=U | xargs subl"
