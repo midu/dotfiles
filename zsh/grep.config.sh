@@ -1,1 +1,1 @@
-export GREP_OPTIONS='-C2'
+export GREP_OPTIONS='--color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
