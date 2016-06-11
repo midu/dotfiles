@@ -1,2 +1,2 @@
-NODE_PATH=$NODE_PATH:"./node_modules/.bin"
-NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODENV_ROOT=/usr/local/var/nodenv
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
