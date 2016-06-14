@@ -12,15 +12,13 @@ source $DOTFILEPATH/zsh/rails.config.sh
 source $DOTFILEPATH/zsh/challengepost.config.sh
 source $DOTFILEPATH/zsh/blue_apron.config.sh
 source $DOTFILEPATH/zsh/grb.config.sh
-source $DOTFILEPATH/zsh/direnv.config.sh
 
 source $DOTFILEPATH/zsh/tddium.config.sh
-
-# source $DOTFILEPATH/zsh/mkd.config.sh
-# source $DOTFILEPATH/zsh/zmv.config.sh
-# source $DOTFILEPATH/zsh/http.config.sh
-# source $DOTFILEPATH/zsh/my_plugins.config.sh
-# source $DOTFILEPATH/zsh/go.config.sh
+source $DOTFILEPATH/zsh/zmv.config.sh
+source $DOTFILEPATH/zsh/http.config.sh
+source $DOTFILEPATH/zsh/go.config.sh
+source $DOTFILEPATH/zsh/direnv.config.sh
+source $DOTFILEPATH/zsh/zsh.config.sh
 
 source $DOTFILEPATH/zsh/path.config.sh
 

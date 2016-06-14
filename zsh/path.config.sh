@@ -13,5 +13,3 @@ PATH=$HOME/node_modules/.bin:$PATH
 source $DOTFILEPATH/zsh/rbenv.config.sh
 
 PATH=./bin:$PATH
-
-export PATH=$PATH
