@@ -9,6 +9,7 @@ PATH=$HOME/.rbenv/bin:$PATH
 PATH=/opt/nginx/sbin:$PATH
 PATH=/Users/$USER/node_modules/.bin:$PATH
 PATH=$HOME/node_modules/.bin:$PATH
+PATH=$HOME/bin:$PATH
 
 source $DOTFILEPATH/zsh/rbenv.config.sh
 

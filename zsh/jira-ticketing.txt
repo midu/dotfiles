@@ -1,0 +1,48 @@
+Outbound
+--------
+
+PACK / BTT / BTP
+  x- Packline configuration should include a way to map a recipe being packed with a work order
+    x- No output sku (recipe) can be assigned to more than one work order per line
+
+  x- Make packline configurations immutable
+    x- For a given configuration ID, I should be able to retrieve the full line setup (slots, recipe mappings...)
+    x- Any relevant change to the line configuration should generate a new ID (for example, changing a WO)
+  - Label generation flow (see design doc)
+    - Behind a configuration flag, when a package is fetched from NSS/FES, before sending it to the line, synchronously call the WO endpoint that creates inventory and tracks progress on the Work Orders mapped to the recipes in this package.
+      - Configuration options should be:
+        - disabled: does not call manufacturing at all
+        - enabled_synchronously: calls manufacturing synchronoulsy and if the call is rejected, then do not generate box tag / return the package to the line (see failure flow)
+        - enabled_asynchronously: fire and forget work order progress, do not handle issues
+    - Figure out failure flow. Do we retry the same package? The next package? The next segment? The next queue? Decision for outbound & operations
+    - When WO progress is successful, persist a mapping between the box tag and the output skus and their WOs
+      - Alternatively, the box tag could include the information (BT-xxxx-1,re01=woa-2,re02=wob-etc)
+
+Manufacturing / Receiving
+  x- Endpoint to checkin inventory against a WO
+    x- Could reject if WO closed
+    x- Reject if WO requested quantities were reached (+/- whatever permitted extra amount)
+    x- Create inventory in inventory system
+    x- If WO is configured to backflush
+      x-  backflush
+      x- If WO is configured to reject requests that don't have enough inventory in BF location, then reject. In that case, the backflush must be done synchronously
+    x- Only increment WO process if inventory creation (and potentially backflush) is successful
+
+    x- Should support creation of inventory against multiple Work Orders
+      x- Should support consumption of inventory against multiple locations and BoMs
+      x- Should support passing through all the inventory creation options to the inventory system
+
+    x- Work orders should define the backflush location per line item from the BoM. possibly multiple per line item. We could possibly backflush "2 slices of bread" as 2 times 1 slice of bread, from 1 slot each. Or 2 picks from a single slot.
+    x- Endpoint to void WO(s) progres. Similar (but opposite) to the progress endpoint, creates inventory for each of the BoM line items on the BF location(s), and decrements output skus from the creation location
+    x- tools for easily creating WOs for recipes. should not come from wms
+
+
+Inventory
+  - Create virtual location per facility to store the WOs created on the line [depends on inv creation call from WO]
+    - regularly empty those locations
+  - Decrementing inventory should work, currently we don't make sure that the inventory wasn't modified by another request before decrementing
+  - Incrementing inventory should work, currently we don't make sure that the inventory wasn't modified by another request before incrementing
+  - Endpoint to "transform" inventory: creates 1 or more skus, consumes a set of skus from from a set of locations
+    - All the existing options for inventory creation at GCI should be supported
+  - Inventory search: should be trivial to do inventory rollup search per location (currently only works at the warehouse level)
+
