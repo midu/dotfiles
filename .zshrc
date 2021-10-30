@@ -12,3 +12,4 @@ source $DOTFILEPATH/zsh/prompt.config.sh
 source $DOTFILEPATH/zsh/zsh.config.sh
 
 source $DOTFILEPATH/zsh/omz.config.sh
+
