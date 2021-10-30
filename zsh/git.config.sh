@@ -1,4 +1,4 @@
-export GIT_EDITOR='subl -w'
+export GIT_EDITOR="$EDITOR -w"
 
 alias gb='git branch -a -v' # lists all branches and the latest commit for each
 alias gca='git commit -av' # adds all local changes, opens your editor for commit message, and shows diff of commit

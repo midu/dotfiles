@@ -5,6 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="robbyrussell"
 
-plugins=(lol osx autojump brew git git-remote-branch history-substring-search node npm redis-cli git-open)
+plugins=(lol osx brew git history-substring-search node npm redis-cli)
+
+echo "oh my"
+echo $ZSH
 
 source $ZSH/oh-my-zsh.sh
